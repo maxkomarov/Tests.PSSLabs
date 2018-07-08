@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69D35D82-275C-41B4-8B05-46BADEFBD3E8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WhitePages</RootNamespace>
+    <AssemblyName>WhitePages</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>book.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\DataConnector.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="PersonEditingEventArgs.cs" />
+    <Compile Include="Presenters\AddressPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenters\AddressPane.Designer.cs">
+      <DependentUpon>AddressPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\AddressExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenters\AddressExplorer.Designer.cs">
+      <DependentUpon>AddressExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\AddressSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presenters\AddressSelector.Designer.cs">
+      <DependentUpon>AddressSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\NewAddressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenters\NewAddressBar.Designer.cs">
+      <DependentUpon>NewAddressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\PersonPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenters\PersonPane.Designer.cs">
+      <DependentUpon>PersonPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\Persons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenters\Persons.Designer.cs">
+      <DependentUpon>Persons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\PersonsPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenters\PersonsPane.Designer.cs">
+      <DependentUpon>PersonsPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\SearchPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenters\SearchPane.Designer.cs">
+      <DependentUpon>SearchPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchArgs.cs" />
+    <Compile Include="TextGenerator.cs" />
+    <Compile Include="UI\AddressExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddressExplorer.Designer.cs">
+      <DependentUpon>AddressExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ListViewColumnSorter.cs" />
+    <Compile Include="UI\Controls\ListViewExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\NumberingStyle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\NumberingStyle.Designer.cs">
+      <DependentUpon>NumberingStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\GeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GeneratorForm.Designer.cs">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Presenters\AddressPane.resx">
+      <DependentUpon>AddressPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenters\AddressExplorer.resx">
+      <DependentUpon>AddressExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenters\AddressSelector.resx">
+      <DependentUpon>AddressSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenters\NewAddressBar.resx">
+      <DependentUpon>NewAddressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenters\PersonPane.resx">
+      <DependentUpon>PersonPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenters\Persons.resx">
+      <DependentUpon>Persons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenters\PersonsPane.resx">
+      <DependentUpon>PersonsPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenters\SearchPane.resx">
+      <DependentUpon>SearchPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddressExplorer.resx">
+      <DependentUpon>AddressExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\NumberingStyle.resx">
+      <DependentUpon>NumberingStyle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\GeneratorForm.resx">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="book.ico" />
+    <None Include="Resources\doc_empty_icon&amp;161.png" />
+    <None Include="Resources\undo_icon&amp;16.png" />
+    <None Include="Resources\delete_icon&amp;161.png" />
+    <None Include="Resources\mail_icon&amp;16.png" />
+    <None Include="Resources\doc_empty_icon&amp;16.png" />
+    <None Include="Resources\zoom_icon&amp;16.png" />
+    <None Include="Resources\expand_icon&amp;16.png" />
+    <None Include="Resources\checkmark_icon&amp;16.png" />
+    <None Include="Resources\refresh_icon&amp;16.png" />
+    <None Include="Resources\delete_icon&amp;16.png" />
+    <None Include="Resources\clipboard_past_icon&amp;16.png" />
+    <None Include="Resources\clipboard_copy_icon&amp;16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
